@@ -1,4 +1,4 @@
-package golang
+package __multi_thread
 
 import (
 	"context"
