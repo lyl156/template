@@ -9,12 +9,13 @@ require (
 )
 
 require (
+	github.com/IBM/sarama v1.45.1
 	github.com/bluele/gcache v0.0.2
 	github.com/go-co-op/gocron/v2 v2.16.0
+	github.com/moul/http2curl v1.0.0
 )
 
 require (
-	github.com/IBM/sarama v1.45.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/eapache/go-resiliency v1.7.0 // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20230731223053-c322873962e3 // indirect
@@ -36,6 +37,7 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
+	github.com/smartystreets/goconvey v1.8.1 // indirect
 	golang.org/x/crypto v0.33.0 // indirect
 	golang.org/x/net v0.35.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
