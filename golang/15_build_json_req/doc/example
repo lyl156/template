@@ -1,0 +1,65 @@
+example:
+
+{
+  "config": {
+    "wide_screen_mode": true
+  },
+  "header": {
+    "template": "HeaderColour",
+    "title": {
+      "i18n": {
+        "en_us": "TitleEN",
+        "zh_cn": "TitleCN"
+      },
+      "tag": "plain_text"
+    }
+  },
+  "i18n_elements": {
+    "zh_cn": [
+      {
+        "tag": "div",
+        "text": {
+          "content": "TextCN",
+          "tag": "lark_md"
+        }
+      },
+      {
+        "tag": "action",
+        "actions": [
+          {
+            "tag": "button",
+            "text": {
+              "content": "ButtonCN",
+              "tag": "plain_text"
+            },
+            "type": "primary",
+            "url": "URLContentCN"
+          }
+        ]
+      }
+    ],
+    "en_us": [
+      {
+        "tag": "div",
+        "text": {
+          "content": "TextEN",
+          "tag": "lark_md"
+        }
+      },
+      {
+        "tag": "action",
+        "actions": [
+          {
+            "tag": "button",
+            "text": {
+              "content": "ButtonEN",
+              "tag": "plain_text"
+            },
+            "type": "primary",
+            "url": "URLContentEN"
+          }
+        ]
+      }
+    ]
+  }
+}
