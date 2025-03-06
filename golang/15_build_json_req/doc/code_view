@@ -1,0 +1,23 @@
+代码结构视角：
+
+消息结构
+├── Config (消息配置)
+│   └── WideScreenMode: true
+├── Header (消息头部)
+│   ├── Template: HeaderColour
+│   └── Title (标题)
+│       ├── EN: TitleEN
+│       └── ZH: TitleCN
+└── I18nElements (多语言消息内容)
+    ├── zh_cn (中文内容)
+    │   ├── Div (普通文本)
+    │   │   └── Content: TextCN
+    │   └── Action (按钮)
+    │       ├── ButtonText: ButtonCN
+    │       └── URL: URLContentCN
+    └── en_us (英文内容)
+        ├── Div (普通文本)
+        │   └── Content: TextEN
+        └── Action (按钮)
+            ├── ButtonText: ButtonEN
+            └── URL: URLContentEN
