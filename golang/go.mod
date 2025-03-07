@@ -3,16 +3,14 @@ module github.com/lyl156/template
 go 1.21.5
 
 require (
-	github.com/avast/retry-go v3.0.0+incompatible
-	github.com/stretchr/testify v1.10.0
-	golang.org/x/sync v0.11.0
-)
-
-require (
 	github.com/IBM/sarama v1.45.1
+	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/bluele/gcache v0.0.2
 	github.com/go-co-op/gocron/v2 v2.16.0
 	github.com/moul/http2curl v1.0.0
+	github.com/prometheus/client_golang v1.21.1
+	github.com/stretchr/testify v1.10.0
+	golang.org/x/sync v0.11.0
 )
 
 require (
@@ -34,17 +32,14 @@ require (
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
 	github.com/jonboulle/clockwork v0.5.0 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
-	github.com/kr/pretty v0.3.1 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/prometheus/client_golang v1.21.1 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
 	github.com/prometheus/common v0.62.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
-	github.com/rogpeppe/go-internal v1.10.0 // indirect
 	github.com/smartystreets/goconvey v1.8.1 // indirect
 	golang.org/x/crypto v0.33.0 // indirect
 	golang.org/x/net v0.35.0 // indirect
