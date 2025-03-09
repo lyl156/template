@@ -1,0 +1,5 @@
+啟動 kafka
+docker-compose up -d
+
+查看 topic 內的 message 數
+docker exec -it kafka-learn kafka-run-class kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic learn-topic --time -1
