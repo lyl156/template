@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 )
 
-// Config refers to the TCC conf for rolling out a feature.
+// Config refers to the dynamic conf for rolling out a feature.
 type Config struct {
 	AccessList   []string `json:"accesslist,omitempty"`
 	BlockList    []string `json:"blocklist,omitempty"`
@@ -78,9 +78,9 @@ func UsePercentageMethod(value string) Method {
 // When Config.mustNotAllow is false, as long as 1 Method evaluates to true this function returns true.
 // Usage:
 //
-//	canRollout := rollout.IsAllowed("test_tcc_key",
+//	canRollout := rollout.IsAllowed("test_cc_key",
 //		rollout.UseAccessListMethod(sendItem.Psm),
-//		rollout.UsePercentageMethod("test_tcc_key"+sendItem.Psm),
+//		rollout.UsePercentageMethod("test_cc_key"+sendItem.Psm),
 //		rollout.UseBlockListMethod("bad PSM"))
 //	if canRollout {
 //		...
@@ -90,13 +90,13 @@ func IsAllowed(key string, methods ...Method) bool {
 		return false
 	}
 
-	tccConfig, err := GetDynamicConfig(context.Background(), key)
+	ccConfig, err := GetDynamicConfig(context.Background(), key)
 	if err != nil {
 		return false
 	}
 
 	var config Config
-	if err := json.Unmarshal([]byte(tccConfig), &config); err != nil {
+	if err := json.Unmarshal([]byte(ccConfig), &config); err != nil {
 		return false
 	}
 

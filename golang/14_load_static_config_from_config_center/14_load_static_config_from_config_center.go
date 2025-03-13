@@ -19,14 +19,14 @@ func (c *ConfigCenter) Get(ctx context.Context, key string) (string, error) {
 	return "", nil
 }
 
-func LoadConfigFromTCC(ctx context.Context, configFile string) error {
+func LoadConfigFromCC(ctx context.Context, configFile string) error {
 	data, err := configCenter.Get(ctx, configFile)
 	if err != nil {
-		return fmt.Errorf("LoadConfig TccClient get, error: %s", err.Error())
+		return fmt.Errorf("LoadConfig ccClient get, error: %s", err.Error())
 	}
 
 	if err = yaml.Unmarshal([]byte(data), &Conf); err != nil {
-		return fmt.Errorf("LoadFromTCC unmarshal err: %s", err.Error())
+		return fmt.Errorf("LoadFromCC unmarshal err: %s", err.Error())
 	}
 
 	if j, err := json.Marshal(&Conf); err == nil {
@@ -54,7 +54,7 @@ func GetConfigByFormType(ctx context.Context, formType FormType) []SomeConfig {
 const LarkIntegrationKey = "xx_data.yaml"
 
 func main() {
-	LoadConfigFromTCC(context.Background(), LarkIntegrationKey)
+	LoadConfigFromCC(context.Background(), LarkIntegrationKey)
 	specificConfig := GetConfigByFormType(context.Background(), "formType")
 	fmt.Println(specificConfig)
 }
