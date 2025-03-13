@@ -9,3 +9,4 @@
 1. init slf4j
 2. mq consumer 沒有 containerFactory 則沒有消費，如何排查
 3. metrics 连上 prometheus, 在 grafana 查看
+4. 搜寻 ExecutorService, 有多种执行的写法：CompletableFuture.supplyAsync( -> ), executor.submit, CompletionService 

@@ -51,10 +51,10 @@ func GetConfigByFormType(ctx context.Context, formType FormType) []SomeConfig {
 	return nil
 }
 
-const LarkIntegrationKey = "xx_data.yaml"
+const BusinessIntegrationKey = "xx_data.yaml"
 
 func main() {
-	LoadConfigFromCC(context.Background(), LarkIntegrationKey)
+	LoadConfigFromCC(context.Background(), BusinessIntegrationKey)
 	specificConfig := GetConfigByFormType(context.Background(), "formType")
 	fmt.Println(specificConfig)
 }
