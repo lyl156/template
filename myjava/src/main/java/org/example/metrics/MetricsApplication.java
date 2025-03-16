@@ -2,6 +2,8 @@ package org.example.metrics;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+
+import org.slf4j.MDC;
+
 
 @SpringBootApplication
 public class MetricsApplication {
@@ -31,6 +36,7 @@ public class MetricsApplication {
 
 @RestController
 class MetricsController {
+    private static final Logger logger = LoggerFactory.getLogger(MetricsController.class);
     private final Counter xxFailureCounter;
 
     public MetricsController(Counter xxFailureCounter) {
@@ -40,6 +46,10 @@ class MetricsController {
     @GetMapping("/increment")
     public String incrementMetric(@RequestParam(defaultValue = "failure") String status) {
         xxFailureCounter.increment();
+
+        String traceId = MDC.get("traceId");
+        logger.info("当前 Trace ID:{}", traceId);
+
         return "Metric incremented for status: " + status;
     }
 }

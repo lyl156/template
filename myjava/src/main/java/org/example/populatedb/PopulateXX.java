@@ -13,7 +13,7 @@ public class PopulateXX {
         Context ctx = new Context(logId);
 
         long count = 0;
-
+        logger.info("populateApprovalName start");
         // try-with-resources 语法允许在 try() 里声明 stream，在 try 代码块执行完后自动关闭 stream
         try (Stream<MockData> stream = new ScanApprovalService().scanApproval()) {
             count = stream.filter(mockData -> {
